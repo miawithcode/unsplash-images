@@ -22,17 +22,6 @@ document.body.classList.toggle('dark-theme', newDarkTheme);
 
 `.dark-theme .form {}`
 
-### User Prefers Dark Mode
-
-```css
-@media (prefers-color-scheme: color) {
-  :root {
-  --dark-bg-color: var(--black);
-  --text-color-on-dark: var(--slate-50);
-  }
-}
-```
-
 ## Search Form
 
 1. 用 `e.target.elements` 获取 input 中的值

@@ -3,11 +3,16 @@ import { createContext, useContext, useState, useEffect } from 'react';
 const AppContext = createContext();
 
 const getInitialDarkMode = () => {
-  const preferDarkMode = window.matchMedia(
+  const prefersDarkMode = window.matchMedia(
     '(prefers-color-scheme:dark)'
   ).matches;
-  console.log(preferDarkMode);
-  return preferDarkMode;
+  const storedDarkMode = localStorage.getItem('darkTheme');
+
+  if(storedDarkMode === null ) {
+    return prefersDarkMode;
+  }
+  
+  return storedDarkMode === 'true';
 };
 
 export const AppProvider = ({ children }) => {
@@ -17,6 +22,7 @@ export const AppProvider = ({ children }) => {
   const toggleDarkTheme = () => {
     const newDarkTheme = !isDarkTheme;
     setIsDarkTheme(newDarkTheme);
+    localStorage.setItem('darkTheme', newDarkTheme);
   };
 
   useEffect(() => {
