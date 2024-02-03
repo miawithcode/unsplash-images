@@ -35,3 +35,10 @@ document.body.classList.toggle('dark-theme', newDarkTheme);
     ```
 
 2. Use JavaScript
+
+## Search Form
+
+1. 用 `e.target.elements` 获取 input 中的值
+   ```jsx
+   const searchValue = e.target.elements.search.value; // search 是在 input 中设置的 name; e.target.value 的另一种方式
+   ```
