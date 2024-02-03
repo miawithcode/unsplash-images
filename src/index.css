@@ -1,0 +1,31 @@
+:root {
+  --slate-50: #f8fafc;
+  --black: #121212;
+
+  --bg-color: var(--slate-50);
+  --dark-bg-color: var(--black);
+
+  --transition: all 0.3s ease;
+  --fluid-width: 90vw;
+  --fixed-width: 600px;
+  --borderRadius: 0.25rem;
+  --letterSpacing: 1px;
+
+  /* dark mode */
+  --text-color: var(--black);
+  --text-color-on-dark: var(--slate-50);
+  --dark-mode-transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.dark-theme {
+  background: var(--dark-bg-color);
+  color: var(--text-color-on-dark);
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: var(--dark-mode-transition);
+}
+
+/* .dark-theme .form {} */
