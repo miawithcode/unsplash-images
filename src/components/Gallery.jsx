@@ -1,19 +1,20 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import { useGlobalContext } from '../context';
 
 const url =
-  'https://api.unsplash.com/search/photos?client_id=ACESS_KEY&query=puppy';
+  'https://api.unsplash.com/search/photos?client_id=ACESS_KEY';
 
 const Gallery = () => {
+  const { searchTerm } = useGlobalContext();
+
   const response = useQuery({
-    queryKey: ['images'],
+    queryKey: ['images', searchTerm],
     queryFn: async () => {
-      const result = await axios.get(url);
+      const result = await axios.get(`${url}&query=${searchTerm}`);
       return result.data;
     },
   });
-
-  console.log(response);
 
   if (response.isPending) {
     return (
@@ -40,11 +41,20 @@ const Gallery = () => {
     );
   }
 
-  return <section className='image-container'>
-    {results.map((image) => {
-      const url = image?.urls?.regular
-      return <img src={url} alt={image.alt_description} key={image.id} className='img' />
-    })}
-  </section>;
+  return (
+    <section className="image-container">
+      {results.map((image) => {
+        const url = image?.urls?.regular;
+        return (
+          <img
+            src={url}
+            alt={image.alt_description}
+            key={image.id}
+            className="img"
+          />
+        );
+      })}
+    </section>
+  );
 };
 export default Gallery;
