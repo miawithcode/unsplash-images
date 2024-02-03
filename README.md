@@ -21,3 +21,17 @@ document.body.classList.toggle('dark-theme', newDarkTheme);
 ### Class Based On Dark Theme
 
 `.dark-theme .form {}`
+
+### User Prefer Dark Mode
+
+1. Straight Up CSS
+    ```css
+    @media (prefers-color-scheme: color) {
+      :root {
+      --dark-bg-color: var(--black);
+      --text-color-on-dark: var(--slate-50);
+      }
+    }
+    ```
+
+2. Use JavaScript
