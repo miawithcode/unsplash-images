@@ -17,12 +17,12 @@
   --dark-mode-transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 
-@media (prefers-color-scheme: color) {
+/* @media (prefers-color-scheme: color) {
   :root {
   --dark-bg-color: var(--black);
   --text-color-on-dark: var(--slate-50);
   }
-}
+} */
 
 .dark-theme {
   background: var(--dark-bg-color);
