@@ -59,3 +59,11 @@ Unsplash 是一个提供大量免费使用的高质量图片库的网站。Unspl
 3. search functionality (hint : search photos)
 
 注册帐户后，需要找到 API 密钥和正确的 URL，以便在使用 Unsplash API 搜索图片时使用。这些信息可以在 Unsplash 提供的 API 文档中找到。
+
+## React Query Dev Tools
+
+React 查询开发工具提供了一种检查和调试 React 查询数据和缓存行为的方法。
+
+```sh
+npm i @tanstack/react-query-devtools
+```
