@@ -36,8 +36,8 @@
 } */
 
 .dark-theme {
-  background: var(--dark-bg-color);
-  color: var(--text-color-on-dark);
+  --bg-color: var(--dark-bg-color);
+  --text-color: var(--text-color-on-dark);
 }
 
 body {
