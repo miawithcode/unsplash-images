@@ -56,3 +56,18 @@ React 查询开发工具提供了一种检查和调试 React 查询数据和缓�
 ```sh
 npm i @tanstack/react-query-devtools
 ```
+
+## ENV Variable
+
+1. `.env` 不能放在 `src` 目录下
+2. Vite 项目中的环境变量要以 `VITE_` 开头
+   ```
+   VITE_API_KEY=XXX...
+   ```
+3. 添加环境变量后要重启 server
+4. 在 `.jsx` 文件中获取 `.env` 中的值
+   ```jsx
+   import.meta.env.VITE_API_KEY
+   ```
+5. 因为 API KEY 写在前端，所以在 chrome dev tool 的 Network 中还是可以看到 API KEY。
+6. 唯一的隐藏 API KEY 的方法是 setting up the serverless function (with Netlify)
