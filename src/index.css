@@ -1,19 +1,30 @@
-:root {
-  --slate-50: #f8fafc;
-  --black: #121212;
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  --bg-color: var(--slate-50);
+:root {
+  --primary: #F28585;
+  --white: #f8fafc;
+  --black: #121212;
+  --grey: #EEEDEB;
+
+  --bg-color: var(--white);
   --text-color: var(--black);
-  
+
   --transition: all 0.3s ease;
   --fluid-width: 90vw;
   --fixed-width: 600px;
+  --max-width: 1120px;
   --borderRadius: 0.25rem;
   --letterSpacing: 1px;
-  
+
   /* dark mode */
   --dark-bg-color: var(--black);
-  --text-color-on-dark: var(--slate-50);
+  --text-color-on-dark: var(--white);
   --dark-mode-transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 
@@ -35,4 +46,106 @@ body {
   transition: var(--dark-mode-transition);
 }
 
+/* Dark Theme */
+
 /* .dark-theme .form {} */
+
+.img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.btn {
+  cursor: pointer;
+  background: var(--primary);
+  color: var(--white);
+  border: transparent;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.toggle-container {
+  width: var(--fluid-width);
+  max-width: var(--max-width);
+  padding: 1rem 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: end;
+}
+
+.dark-toggle {
+  background: transparent;
+  border-color: transparent;
+  width: 5rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.toggle-icon {
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+/* Search Form */
+
+.title {
+  color: var(--primary);
+  text-align: center;
+}
+
+.search-form {
+  width: var(--fluid-width);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.search-input {
+  border-color: var(--grey);
+  border-width: 1px;
+  color: var(--text-color);
+  transition: var(--dark-mode-transition);
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.search-form .btn {
+  padding: .8rem 2rem;
+}
+
+/* Gallery */
+
+.image-container {
+  width: var(--fluid-width);
+  max-width: var(--max-width);
+  margin: 3rem auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.image-container .img {
+  height: 20rem;
+  border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+  .image-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .image-container .img {
+  height: 15rem;
+}
+}
+
+@media (min-width: 992px) {
+  .image-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
